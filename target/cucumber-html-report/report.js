@@ -85,7 +85,7 @@ formatter.match({
   "location": "StepsClass.i_am_in_Goibibo_website()"
 });
 formatter.result({
-  "duration": 12743750035,
+  "duration": 11310009156,
   "status": "passed"
 });
 formatter.match({
@@ -102,14 +102,14 @@ formatter.match({
   "location": "StepsClass.i_enter_flight_from_to(String,String)"
 });
 formatter.result({
-  "duration": 4920252659,
+  "duration": 4831702903,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.i_click_on_Departure_day_for_the_next_day()"
 });
 formatter.result({
-  "duration": 206756374,
+  "duration": 223838197,
   "status": "passed"
 });
 formatter.match({
@@ -122,56 +122,56 @@ formatter.match({
   "location": "StepsClass.i_click_on_Return_day_for_after_days(int)"
 });
 formatter.result({
-  "duration": 366324598,
+  "duration": 399327980,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.i_click_on_Get_Set_Go_button()"
 });
 formatter.result({
-  "duration": 13999946684,
+  "duration": 10812245227,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.i_select_earliest_departure_for_the_next_day()"
 });
 formatter.result({
-  "duration": 30322629259,
+  "duration": 29636464804,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.i_select_earliest_departure_for_the_return_flight()"
 });
 formatter.result({
-  "duration": 21536,
+  "duration": 30318,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.i_click_on_Book_button()"
 });
 formatter.result({
-  "duration": 29430,
+  "duration": 29121,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.i_should_be_able_to_see_the_Total_Amount()"
 });
 formatter.result({
-  "duration": 27422,
+  "duration": 32657,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.i_should_be_able_to_see_the_Payment_button()"
 });
 formatter.result({
-  "duration": 26789,
+  "duration": 30271,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.application_should_get_closed()"
 });
 formatter.result({
-  "duration": 25740,
+  "duration": 31147,
   "status": "passed"
 });
 });

@@ -1,7 +1,9 @@
 package stepsDefinition;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -48,14 +50,21 @@ public class FlightSearch extends AbstractPage{
 			                	
 			                    for(int i=0; i<deptime.size();i++) {
 	                    			String dep =  deptime.get(i).getText();
-	                    			System.out.println(dep);
 	                    			timelist.add(dep);
+	                    			
 	                    			match=true;
+	                    			
 	                    		}
-			                }
-			               
-			          
+			                   Collections.sort(timelist);
+			                   System.out.println(timelist);
+			                     //for(int i = 0; i<timelist.size();i++) { 
+			                    	// if(i==0) {
+			                    		 System.out.println(timelist.toArray()[0]); 
+			                    		// break;
+			              //}
+			           //}
 			        }
+			      }
 	
 		return new FlightSearch(driver);
 	}
