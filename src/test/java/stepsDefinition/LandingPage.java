@@ -100,7 +100,7 @@ public class LandingPage extends AbstractPage{
 		
 		public FlightSearch clickSearch() throws InterruptedException {
 			driver.findElement(By.xpath("//button[@id='gi_search_btn']")).click();
-			Thread.sleep(5000);
+			Thread.sleep(6000);
 			return new FlightSearch(driver);
 		}
 }

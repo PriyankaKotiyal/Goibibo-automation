@@ -13,6 +13,7 @@ public class StepsClass {
 	
 	LandingPage lp;
 	FlightSearch fs;
+	BookConfirmationPage bc;
 	
 	@Given("^I am in Goibibo website$")
 	public void i_am_in_Goibibo_website() throws Throwable {
@@ -48,40 +49,34 @@ public class StepsClass {
 	    fs.showAllFlights();
 	}
 
-	@When("^I select earliest departure for the next day$")
-	public void i_select_earliest_departure_for_the_next_day() throws Throwable {
+	@When("^I select earliest departure for both days$")
+	public void i_select_earliest_departure_for_both_days() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 	   fs.selectEarliestDeparture();
-	}
-
-	@When("^I select earliest departure for the return flight$")
-	public void i_select_earliest_departure_for_the_return_flight() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-	    
 	}
 
 	@When("^I click on Book button$")
 	public void i_click_on_Book_button() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	    
+	   bc = fs.selectBookOption();
 	}
 
 	@Then("^I should be able to see the Total Amount$")
 	public void i_should_be_able_to_see_the_Total_Amount() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	    
+	    bc.checkTotal();
 	}
 
 	@Then("^I should be able to see the Payment button$")
 	public void i_should_be_able_to_see_the_Payment_button() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	    
+		bc.checkPayment();
 	}
 
 	@Then("^Application should get closed$")
 	public void application_should_get_closed() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	   
+	   driver.quit();
 	}
 
 

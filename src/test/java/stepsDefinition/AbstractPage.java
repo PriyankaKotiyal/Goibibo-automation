@@ -20,5 +20,5 @@ public class AbstractPage {
 		return new LandingPage(driver);
 	
 	}
-	
+		
 }

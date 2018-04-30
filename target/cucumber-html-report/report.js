@@ -53,31 +53,26 @@ formatter.step({
 });
 formatter.step({
   "line": 12,
-  "name": "I select earliest departure for the next day",
+  "name": "I select earliest departure for both days",
   "keyword": "And "
 });
 formatter.step({
   "line": 13,
-  "name": "I select earliest departure for the return flight",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 14,
   "name": "I click on Book button",
   "keyword": "And "
 });
 formatter.step({
-  "line": 15,
+  "line": 14,
   "name": "I should be able to see the Total Amount",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 16,
+  "line": 15,
   "name": "I should be able to see the Payment button",
   "keyword": "Then "
 });
 formatter.step({
-  "line": 17,
+  "line": 16,
   "name": "Application should get closed",
   "keyword": "Then "
 });
@@ -85,7 +80,7 @@ formatter.match({
   "location": "StepsClass.i_am_in_Goibibo_website()"
 });
 formatter.result({
-  "duration": 11310009156,
+  "duration": 15579657536,
   "status": "passed"
 });
 formatter.match({
@@ -102,14 +97,14 @@ formatter.match({
   "location": "StepsClass.i_enter_flight_from_to(String,String)"
 });
 formatter.result({
-  "duration": 4831702903,
+  "duration": 4854187470,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.i_click_on_Departure_day_for_the_next_day()"
 });
 formatter.result({
-  "duration": 223838197,
+  "duration": 201977280,
   "status": "passed"
 });
 formatter.match({
@@ -122,56 +117,49 @@ formatter.match({
   "location": "StepsClass.i_click_on_Return_day_for_after_days(int)"
 });
 formatter.result({
-  "duration": 399327980,
+  "duration": 361771016,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.i_click_on_Get_Set_Go_button()"
 });
 formatter.result({
-  "duration": 10812245227,
+  "duration": 10126948791,
   "status": "passed"
 });
 formatter.match({
-  "location": "StepsClass.i_select_earliest_departure_for_the_next_day()"
+  "location": "StepsClass.i_select_earliest_departure_for_both_days()"
 });
 formatter.result({
-  "duration": 29636464804,
-  "status": "passed"
-});
-formatter.match({
-  "location": "StepsClass.i_select_earliest_departure_for_the_return_flight()"
-});
-formatter.result({
-  "duration": 30318,
+  "duration": 32452212314,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.i_click_on_Book_button()"
 });
 formatter.result({
-  "duration": 29121,
+  "duration": 783296097,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.i_should_be_able_to_see_the_Total_Amount()"
 });
 formatter.result({
-  "duration": 32657,
+  "duration": 1806368283,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.i_should_be_able_to_see_the_Payment_button()"
 });
 formatter.result({
-  "duration": 30271,
+  "duration": 3139010152,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.application_should_get_closed()"
 });
 formatter.result({
-  "duration": 31147,
+  "duration": 150022454,
   "status": "passed"
 });
 });

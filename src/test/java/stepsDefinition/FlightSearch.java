@@ -34,7 +34,8 @@ public class FlightSearch extends AbstractPage{
 	}  
 	public FlightSearch selectEarliestDeparture() throws InterruptedException {
 		String min = "00:00";
-		List<String> timelist = new ArrayList<String>();
+		List<String> timelistdep = new ArrayList<String>();
+		List<String> timelistret = new ArrayList<String>();
 		JavascriptExecutor js = (JavascriptExecutor)driver;
 		
 		 Object lenOfPage = js.executeScript("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;");
@@ -44,28 +45,52 @@ public class FlightSearch extends AbstractPage{
 			                Thread.sleep(2000);
 			                lenOfPage = js.executeScript("window.scrollTo(0, document.body.scrollHeight);var lenOfPage=document.body.scrollHeight;return lenOfPage;");
 			                List<WebElement> deptime = driver.findElements(By.xpath("//div[@id='onwFltContainer']/div/descendant::span[@class='ico20 db fn'][1]"));
-			                    System.out.println(deptime.size());
+			                List<WebElement> retTime = driver.findElements(By.xpath("//div[@id='retFltContainer']/div/descendant::span[@class='ico20 db fn'][1]"));
+			                    //System.out.println(deptime.size());
+			                    //System.out.println(retTime.size());
 			                    
 			                if (lastCount.equals(lenOfPage)) {
 			                	
 			                    for(int i=0; i<deptime.size();i++) {
+			   
 	                    			String dep =  deptime.get(i).getText();
-	                    			timelist.add(dep);
+	                    			timelistdep.add(dep);
 	                    			
-	                    			match=true;
+	                    		
 	                    			
 	                    		}
-			                   Collections.sort(timelist);
-			                   System.out.println(timelist);
-			                     //for(int i = 0; i<timelist.size();i++) { 
-			                    	// if(i==0) {
-			                    		 System.out.println(timelist.toArray()[0]); 
-			                    		// break;
-			              //}
-			           //}
+			                    for(int i=0;i<retTime.size();i++) {
+			                    	String ret = retTime.get(i).getText();
+			                    	timelistret.add(ret);
+			                    }
+			                	match=true;
+			                   Collections.sort(timelistdep);
+			                   Collections.sort(timelistret);
+			                   
+			                   System.out.println(timelistdep);
+			                   System.out.println(timelistret);
+			                     
+			                   	String tld = (String) timelistdep.toArray()[0];
+			                   	String tlr = (String) timelistret.toArray()[0];
+			                    
+			                    System.out.println(tld); 
+			                    System.out.println(tlr); 
+			                    
+			    
+		WebElement deprad = driver.findElement(By.xpath("//*[@id ='onwFltContainer']//*[@class = 'card fl width100 marginB10']//*[text()='"+tld+"']/../../../..//*[@class='control__indicator']"));
+		WebElement rerad = driver.findElement(By.xpath("//*[@id ='retFltContainer']//*[@class = 'card fl width100 marginB10']//*[text()='"+tlr+"']/../../../..//*[@class='control__indicator']"));				
+		deprad.click();
+		rerad.click();
 			        }
 			      }
 	
 		return new FlightSearch(driver);
+	}
+	
+			public BookConfirmationPage selectBookOption(){
+		
+				WebElement bookbut = driver.findElement(By.xpath("//*[@value=\"BOOK\"]"));
+				bookbut.click();
+				return new BookConfirmationPage(driver);
 	}
 }
