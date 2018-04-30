@@ -80,7 +80,7 @@ formatter.match({
   "location": "StepsClass.i_am_in_Goibibo_website()"
 });
 formatter.result({
-  "duration": 15579657536,
+  "duration": 33698042663,
   "status": "passed"
 });
 formatter.match({
@@ -97,14 +97,14 @@ formatter.match({
   "location": "StepsClass.i_enter_flight_from_to(String,String)"
 });
 formatter.result({
-  "duration": 4854187470,
+  "duration": 6271951676,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.i_click_on_Departure_day_for_the_next_day()"
 });
 formatter.result({
-  "duration": 201977280,
+  "duration": 1309258478,
   "status": "passed"
 });
 formatter.match({
@@ -117,49 +117,49 @@ formatter.match({
   "location": "StepsClass.i_click_on_Return_day_for_after_days(int)"
 });
 formatter.result({
-  "duration": 361771016,
+  "duration": 892274807,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.i_click_on_Get_Set_Go_button()"
 });
 formatter.result({
-  "duration": 10126948791,
+  "duration": 6684864296,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.i_select_earliest_departure_for_both_days()"
 });
 formatter.result({
-  "duration": 32452212314,
+  "duration": 48810629004,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.i_click_on_Book_button()"
 });
 formatter.result({
-  "duration": 783296097,
+  "duration": 3151357362,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.i_should_be_able_to_see_the_Total_Amount()"
 });
 formatter.result({
-  "duration": 1806368283,
+  "duration": 1339305872,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.i_should_be_able_to_see_the_Payment_button()"
 });
 formatter.result({
-  "duration": 3139010152,
+  "duration": 3169305384,
   "status": "passed"
 });
 formatter.match({
   "location": "StepsClass.application_should_get_closed()"
 });
 formatter.result({
-  "duration": 150022454,
+  "duration": 1581408696,
   "status": "passed"
 });
 });

@@ -3,6 +3,11 @@ package stepsDefinition;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import TestGoibibo.pageObjectManager.PageObjectManager;
+import Testgoibibo.pageObjects.AbstractPage;
+import Testgoibibo.pageObjects.BookConfirmationPage;
+import Testgoibibo.pageObjects.FlightSearch;
+import Testgoibibo.pageObjects.LandingPage;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -11,14 +16,17 @@ public class StepsClass {
 	
 	WebDriver driver = new FirefoxDriver();
 	
+	AbstractPage ab;
 	LandingPage lp;
 	FlightSearch fs;
 	BookConfirmationPage bc;
+	PageObjectManager pgm;
 	
 	@Given("^I am in Goibibo website$")
 	public void i_am_in_Goibibo_website() throws Throwable {
-	    lp = new LandingPage(driver);
-	    lp.navigateToGoibibo();
+		pgm = new PageObjectManager(driver);
+		ab = pgm.getAbsPage();
+		ab.navigateToGoibibo();
 	    
 	}
 
@@ -26,6 +34,7 @@ public class StepsClass {
 	public void i_enter_flight_from_to(String arg1, String arg2) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
 	    //lp.cancelPopup();
+		lp = pgm.getLandPage();
 	    lp.enterFlightDetails(arg1, arg2);
 	    
 	}
@@ -45,26 +54,30 @@ public class StepsClass {
 	@When("^I click on Get Set Go button$")
 	public void i_click_on_Get_Set_Go_button() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	    fs = lp.clickSearch();
-	    fs.showAllFlights();
+	     lp.clickSearch();
+	    
 	}
 
 	@When("^I select earliest departure for both days$")
 	public void i_select_earliest_departure_for_both_days() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	   fs.selectEarliestDeparture();
+		fs = pgm.getFlightPage();
+		fs.showAllFlights();
+		fs.selectEarliestDeparture();
+		
 	}
 
 	@When("^I click on Book button$")
 	public void i_click_on_Book_button() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	   bc = fs.selectBookOption();
+		fs.selectBookOption();
 	}
 
 	@Then("^I should be able to see the Total Amount$")
 	public void i_should_be_able_to_see_the_Total_Amount() throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
-	    bc.checkTotal();
+	    bc = pgm.getBookConPage();
+		bc.checkTotal();
 	}
 
 	@Then("^I should be able to see the Payment button$")
