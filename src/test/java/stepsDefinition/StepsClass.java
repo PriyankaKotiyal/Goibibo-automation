@@ -2,8 +2,7 @@ package stepsDefinition;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
-import TestGoibibo.pageObjectManager.PageObjectManager;
+import TestGoibibo.managers.PageObjectManager;
 import Testgoibibo.pageObjects.AbstractPage;
 import Testgoibibo.pageObjects.BookConfirmationPage;
 import Testgoibibo.pageObjects.FlightSearch;
@@ -14,7 +13,7 @@ import cucumber.api.java.en.When;
 
 public class StepsClass {
 	
-	WebDriver driver = new FirefoxDriver();
+	WebDriver driver;
 	
 	AbstractPage ab;
 	LandingPage lp;
@@ -22,8 +21,10 @@ public class StepsClass {
 	BookConfirmationPage bc;
 	PageObjectManager pgm;
 	
+	
 	@Given("^I am in Goibibo website$")
 	public void i_am_in_Goibibo_website() throws Throwable {
+		driver = new FirefoxDriver();
 		pgm = new PageObjectManager(driver);
 		ab = pgm.getAbsPage();
 		ab.navigateToGoibibo();

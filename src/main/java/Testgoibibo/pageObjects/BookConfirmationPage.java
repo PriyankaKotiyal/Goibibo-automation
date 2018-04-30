@@ -22,12 +22,10 @@ public class BookConfirmationPage {
 	  @FindBy(how=How.XPATH,using = "//*[text()='Total Amount']") 
 	   WebElement total;
 	
-	
+	  /* To check of payment button is displayed ************************* */
 			public void checkPayment() throws InterruptedException {
 				
 				  JavascriptExecutor js = (JavascriptExecutor)driver;
-				
-				//WebElement element = driver.findElement(By.xpath("//button[text()='Proceed to Payment']"));
 				
 				   js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 				
@@ -36,13 +34,13 @@ public class BookConfirmationPage {
 				   Thread.sleep(3000);
 		
 			}
-			
+	
+	/* To check if Total Amount is displayed   ************************* */
 				public void checkTotal() {
 				
 				  String element = total.getText();
 				
 				  Assert.assertTrue("Total Amount not present", element.equals("Total Amount"));
-				
 				
 			}
 			

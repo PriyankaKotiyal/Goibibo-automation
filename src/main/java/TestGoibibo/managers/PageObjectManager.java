@@ -1,4 +1,4 @@
-package TestGoibibo.pageObjectManager;
+package TestGoibibo.managers;
 
 
 

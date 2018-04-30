@@ -51,22 +51,19 @@ public class LandingPage{
 	
 	
 	public void enterFlightDetails(String arg1 , String arg2) throws InterruptedException {
-		//WebElement fromOptions = driver.findElement(By.id("gosuggest_inputSrc"));
+		
 		fromOptions.sendKeys(arg1);
 		Thread.sleep(2000);
 		enterFrom.click();
 		
-	
-	    //WebElement toOptions = driver.findElement(By.id("gosuggest_inputDest"));
 	    toOptions.sendKeys(arg2);
 	    Thread.sleep(2000);
 	    enterTo.click();
 	    
   } 
-
+/* *****This method will click the departure date i.e tomorrow******************* */
 	    public void chooseDepartDate() {
 	    	   	
-	    	//List<WebElement> dates =  driver.findElements(By.xpath("//div[@id='fare_20180430']"));
 	    	LocalDate locdat = LocalDate.now();
 			LocalDate locdat1 = locdat.plusDays(1);
 			String lc = locdat1.toString();
@@ -76,19 +73,16 @@ public class LandingPage{
 	    	
 	    	 for(int i=0; i<dateFrom.size();i++) {
 	 			
-	 			String date = dateFrom.get(0).getText();
+	 			/*String date = dateFrom.get(0).getText();
 	 			System.out.println(date);
-	 			
-	 			//if(date.equalsIgnoreCase("1")) 
-	 				
+*/	 			 	
 	 				dateFrom.get(0).click();
 	    	 
 	    	 }    	 	 
 	}  
-	      
+	/* To choose return date of the flight which is after 2 days from departure date */
 		public void chooseReturnDate() {
 	    	
-		//List <WebElement> ele = driver.findElements(By.xpath("//input[@class='form-control inputTxtLarge widgetCalenderTxt']"));
 				for(int i=0; i<ele.size(); i++) {
 					if(i==1) {
 						ele.get(i).click();
@@ -105,19 +99,15 @@ public class LandingPage{
 
 	    	 for(int i=0; i<dateTo.size();i++) {
 	 			
-	 			String date = dateTo.get(0).getText();
+	 			/*String date = dateTo.get(0).getText();
 	 			System.out.println(date);
-	 			
-	 			//if(date.equalsIgnoreCase("3")) {
-	 				
+	 			*/
 	 				dateTo.get(0).click();
-	 			
-	 					
-	 				//}
+	 		
 		}
 	   	 
 	}  
-		
+		/* To search the flights by clicking getsetgo button */
 		public void clickSearch() throws InterruptedException {
 			getsetgo.click();
 			Thread.sleep(6000);
